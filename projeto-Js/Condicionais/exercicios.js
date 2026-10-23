@@ -127,15 +127,51 @@ Acesso liberado se (usuário é `admin` OU `gerente`) E senha é `1234`.
 // **Exemplo:** `4`, `9` e `7` → `O maior número é: 9`
 
 
-const numero1 = Number(prompt("Digite um o primeiro valor:"));
-const numero2 = Number(prompt("Digite um o segundo valor:"));
-const numero3 = Number(prompt("Digite um o terceiro valor:"));
+// const numero1 = Number(prompt("Digite um o primeiro valor:"));
+// const numero2 = Number(prompt("Digite um o segundo valor:"));
+// const numero3 = Number(prompt("Digite um o terceiro valor:"));
 
-if (Number.isNaN(numero1) || Number.isNaN(numero2) || Number.isNaN(numero3)) {
-    console.log("Numero invalido!");
+// if (Number.isNaN(numero1) || Number.isNaN(numero2) || Number.isNaN(numero3)) {
+//     console.log("Numero invalido!");
+// } else {
+//     let maior = numero1;
+//     if (numero2 > maior) maior = numero2;
+//     if (numero3 > maior) maior = numero3;
+//     console.log("O maior número é: " + maior);
+// }
+
+const nun1 = Number(prompt("Digite o primeiro número:"));
+const nun2 = Number(prompt("Digite o segundo número:"));
+const op = prompt("Digite a operação (+, -, *, /):");
+let resultado;
+
+if (Number.isNaN(nun1) || Number.isNaN(nun2)) {
+    console.log("Entrada inválida.")
 } else {
-    let maior = numero1;
-    if (numero2 > maior) maior = numero2;
-    if (numero3 > maior) maior = numero3;
-    console.log("O maior número é: " + maior);
+
+    switch (op) {
+        case "+":
+            resultado = nun1 + nun2;
+            console.log(`Resultado; ${resultado}`);
+            break;
+        case "-":
+            resultado = nun1 - nun2;
+            console.log(`Resultado; ${resultado}`);
+        break;
+        case "*":
+            resultado = nun1 * nun2;
+            console.log(`Resultado: ${resultado}`);
+            break;
+        case "/":
+            if (nun2 === 0) {
+                console.log("Divisão por zero não é permitida");
+            } else {
+                resultado = nun1 / nun2;
+                console.log(`Resultado ${resultado}`);
+            }
+            break;
+
+        default:
+            console.log("Operação inválida");
+    }
 }
